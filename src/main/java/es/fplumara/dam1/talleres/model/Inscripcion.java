@@ -2,6 +2,7 @@ package es.fplumara.dam1.talleres.model;
 
 import java.time.LocalDate;
 
+
 public class Inscripcion {
     private String id;
     private Long tallerId;
@@ -15,6 +16,9 @@ public class Inscripcion {
         this.usuarioId = usuarioId;
         this.rol = rol;
         this.fechaIncripcion = fechaIncripcion;
+    }
+
+    public Inscripcion(){
     }
 
     public String getId() {

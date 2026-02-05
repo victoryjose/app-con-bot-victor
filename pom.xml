@@ -19,6 +19,7 @@
         <logback.version>1.5.26</logback.version>
         <jackson.version>2.21.0</jackson.version>
         <commons-csv.version>1.14.1</commons-csv.version>
+        <jda.version>6.3.0</jda.version>
     </properties>
 
     <dependencies>
@@ -79,6 +80,13 @@
             <artifactId>commons-csv</artifactId>
             <version>${commons-csv.version}</version>
         </dependency>
+
+        <!-- JDA (Discord) -->
+        <dependency>
+            <groupId>net.dv8tion</groupId>
+            <artifactId>JDA</artifactId>
+            <version>6.3.0</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -89,6 +97,8 @@
                 <version>3.14.1</version>
                 <configuration>
                     <release>21</release>
+                    <source>25</source>
+                    <target>25</target>
                 </configuration>
             </plugin>
         </plugins>

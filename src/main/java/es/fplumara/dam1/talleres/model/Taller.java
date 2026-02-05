@@ -12,8 +12,8 @@ public class Taller {
     private int cupo;
 
     public Taller(){
-
     }
+
     public Taller(String titulo, String descripcion, EstadoInscripcion estadoInscripcion, String url, String lugar, int cupo) {
         this.titulo = titulo;
         this.descripcion = descripcion;

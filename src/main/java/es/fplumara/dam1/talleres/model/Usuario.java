@@ -38,19 +38,14 @@ public class Usuario {
 
     private String email;
 
-    public Usuario(Long id, Perfil perfil, String discordUserId, String curso, String email) {
-        this.id = id;
+    public Usuario(Perfil perfil, String discordUserId, String curso, String email) {
         this.perfil = perfil;
         this.discordUserId = discordUserId;
         this.curso = curso;
         this.email = email;
     }
 
-    public Usuario(Perfil perfil, String discordUserId, String curso, String email) {
-        this.perfil = perfil;
-        this.discordUserId = discordUserId;
-        this.curso = curso;
-        this.email = email;
+    public Usuario (){
     }
 
     public Long getId() {
