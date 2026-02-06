@@ -7,6 +7,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class InMemoryUserRepository implements UserRepository {
+
     private Long contador =0L;
     private Map<Long, Usuario> usuarios;
 
@@ -31,7 +32,6 @@ public class InMemoryUserRepository implements UserRepository {
 
     @Override
     public Usuario findByEmail(String email) {
-        // Recorre todos los usuarios del mapa
         for(Usuario usuario : usuarios.values()){
            if(usuario.getEmail().equals(email)){
                return usuario;
@@ -42,7 +42,6 @@ public class InMemoryUserRepository implements UserRepository {
 
     @Override
     public Usuario findByDiscordUserId(String discordUserId) {
-        // Recorre todos los usuarios del mapa
         for(Usuario usuario : usuarios.values()){
             if(usuario.getDiscordUserId().equals(discordUserId)){
                 return usuario;
@@ -55,6 +54,5 @@ public class InMemoryUserRepository implements UserRepository {
     public void deleteById(Long id) {
         usuarios.remove(id);
     }
-
 
 }

@@ -5,11 +5,8 @@ import es.fplumara.dam1.talleres.model.Taller;
 import es.fplumara.dam1.talleres.model.Usuario;
 import es.fplumara.dam1.talleres.repository.InscripcionRepository;
 import es.fplumara.dam1.talleres.model.Inscripcion;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
 
+import java.util.*;
 
 public class InMemoryInscripcionRepository implements InscripcionRepository {
 
@@ -35,18 +32,27 @@ public class InMemoryInscripcionRepository implements InscripcionRepository {
     }
 
     @Override
-    public Inscripcion findByTallerIdAndUsuarioId(Long tallerId, Long usuarioId) {
+    public Optional<Inscripcion> findByTallerIdAndUsuarioId(Taller taller, Usuario usuario) {
         for (Inscripcion inscripcion : inscripciones.values()) {
-            if (inscripcion.getUsuarioId().equals(usuarioId) && inscripcion.getTallerId().equals(tallerId)) {
-                return inscripcion;
+            String clave = taller.getId().toString() + " | " + usuario.getId().toString();
+            if (inscripcion.getId().equals(clave)) {
+                return Optional.ofNullable(inscripcion);
             }
         }
-        return null;
     }
 
     @Override
-    public List<Inscripcion> findByTallerId(Long tallerId) {
-        return List.of();
+    public Optional<List<Taller>> findByTallerId(Long tallerId, Taller taller, Usuario usuario) {
+        String clave = taller.getId().toString() + " | " + usuario.getId().toString();
+        String[] partes = clave.split(" | ");
+        Long idtallerSacadoDeIdInscripcion = Long.parseLong(partes[0]);
+        List<Taller> talleresConEseId = new ArrayList<>();
+        for (Inscripcion inscripcion : inscripciones.values()){
+            if (tallerId.equals(idtallerSacadoDeIdInscripcion)){
+                talleresConEseId.add(taller);
+            }
+        }
+        return Optional.ofNullable(talleresConEseId);
     }
 
     @Override
@@ -61,10 +67,10 @@ public class InMemoryInscripcionRepository implements InscripcionRepository {
 
     @Override
     public void deleteById(Long id) {
-
     }
 
     @Override
     public void deleteByTallerIdAndUsuarioId(Long tallerId, Long usuarioId) {
-
     }
+
+}

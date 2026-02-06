@@ -5,15 +5,11 @@ import java.time.LocalDate;
 
 public class Inscripcion {
     private String id;
-    private Long tallerId;
-    private Long usuarioId;
     private String rol;
     private LocalDate fechaIncripcion;
 
     public Inscripcion(Long tallerId, Long usuarioId, String rol, LocalDate fechaIncripcion) {
-        this.id = tallerId.toString()+"/"+usuarioId.toString();
-        this.tallerId = tallerId;
-        this.usuarioId = usuarioId;
+        this.id = id;
         this.rol = rol;
         this.fechaIncripcion = fechaIncripcion;
     }
@@ -27,22 +23,6 @@ public class Inscripcion {
 
     public void setId(String id) {
         this.id = id;
-    }
-
-    public Long getTallerId() {
-        return tallerId;
-    }
-
-    public void setTallerId(Long tallerId) {
-        this.tallerId = tallerId;
-    }
-
-    public Long getUsuarioId() {
-        return usuarioId;
-    }
-
-    public void setUsuarioId(Long usuarioId) {
-        this.usuarioId = usuarioId;
     }
 
     public String getRol() {
@@ -60,4 +40,5 @@ public class Inscripcion {
     public void setFechaIncripcion(LocalDate fechaIncripcion) {
         this.fechaIncripcion = fechaIncripcion;
     }
+
 }

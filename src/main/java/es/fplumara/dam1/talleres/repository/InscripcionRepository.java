@@ -14,9 +14,9 @@ public interface InscripcionRepository {
 
     public Optional<Inscripcion> findById(String id);
 
-    public Inscripcion findByTallerIdAndUsuarioId(Long tallerId, Long usuarioId);
+    public Optional<Inscripcion> findByTallerIdAndUsuarioId(Taller taller, Usuario usuario);
 
-    public List<Inscripcion> findByTallerId(Long tallerId);
+    public Optional<List<Taller>> findByTallerId(Long tallerId, Taller taller, Usuario usuario);
 
     public List<Inscripcion> findByUsuarioId(Long usuarioId);
 

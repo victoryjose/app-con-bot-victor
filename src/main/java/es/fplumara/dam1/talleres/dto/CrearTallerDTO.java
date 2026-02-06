@@ -7,12 +7,11 @@ public class CrearTallerDTO {
     private String estadoInscripcion;
     private String url;
     private String lugar;
-
     private int cupo;
 
     public CrearTallerDTO(){
-
     }
+
     public CrearTallerDTO(String titulo, String descripcion, String estadoInscripcion, String url, String lugar, int cupo) {
         this.titulo = titulo;
         this.descripcion = descripcion;

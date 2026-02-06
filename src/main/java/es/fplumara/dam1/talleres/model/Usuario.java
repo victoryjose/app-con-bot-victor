@@ -1,31 +1,5 @@
 package es.fplumara.dam1.talleres.model;
 
-
-/**
- * - **id**
- *
- *     Identificador interno único del usuario.
- *
- * - **nombre**
- *
- *     Nombre visible del usuario dentro del sistema.
- *
- * - **perfil**
- *
- *     Determina el perfil global del usuario: (PROFESOR, ALUMNO, INVITADO)
- *
- * - **discordUserId** (opcional)
- *
- *     Identificador único del usuario en Discord. Permite futuras integraciones con bots.
- *
- * - **curso** (opcional)
- *
- *     Si es un alumno indica en que curso se encuentra estudiando
- *
- * - **email** (opcional)
- *
- *     Correo electrónico del usuario
- */
 public class Usuario {
 
     private Long id;
